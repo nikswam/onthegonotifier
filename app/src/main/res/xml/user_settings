@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory>
+        android:title="AutoText Settings"
+        <EditTextPreference
+            android:key="departure_text_preference"
+            android:title="Departure Text Message"
+            android:defaultValue="I left"
+            android:summary="Enter message to send when bluetooth device connects"
+            android:dialogTitle="Enter message to send when you have left"
+            />
+
+        <EditTextPreference
+            android:key="arrival_text_preference"
+            android:title="Arrival Text Message"
+            android:defaultValue="I arrived"
+            android:summary="Enter message to send when the bluetooth device disconnects"
+            android:dialogTitle="Enter message to send when you have arrived"/>
+        <EditTextPreference
+            android:key="sms_number_preference"
+            android:inputType="phone"
+            android:title="Phone Number to send text notification"
+            android:summary="Enter the phone number that will receive the text notifications"
+            android:dialogTitle="Enter phone number to send texts to"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory>
+        <MultiSelectListPreference
+            android:dialogTitle="Select Bluetooth Devices"
+            android:entries="@array/entries_list_of_paired_bluetooth_preference"
+            android:entryValues="@array/entryvalues_list_of_paired_bluetooth_preference"
+            android:key="multi_choice_prefs"
+            android:summary="Select Bluetooth Devices to use with this app"
+            android:defaultValue="@array/empty_array"/>
+    </PreferenceCategory>
+</PreferenceScreen>
